@@ -16,7 +16,8 @@
     * [层叠上下文](./requestion/css.md#层叠上下文)
     * [css性能优化](./requestion/css.md#css性能优化)
 * 前端框架
-    * [vue高频题](./requestion/vue.md)
+    * [vue2高频题](./requestion/vue.md)
+    * [vue3知识点](./requestion/vue3.md)
     * [react高频题](./requestion/react.md)
 * 周边生态
     * [webpack](./requestion/webpack.md)

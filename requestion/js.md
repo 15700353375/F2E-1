@@ -55,6 +55,16 @@ string、number、boolean、undefined、symbol、object、function
 * Object.prototype.toString.call(val)
 * [object Type]
 
+>null和undefined的区别
+* null: 表示一个对象被定义了，值为空值。
+    * （1） 作为函数的参数，表示该函数的参数不是对象。
+    * （2） 作为对象原型链的终点。
+* undifined: undefined表示"缺少值"，就是此处应该有一个值，但是还没有定义。
+    * （1）变量被声明了，但没有赋值时，就等于undefined。
+    * （2) 调用函数时，应该提供的参数没有提供，该参数等于undefined。
+    * （3）对象没有赋值的属性，该属性的值为undefined。
+    * （4）函数没有返回值时，默认返回undefined。
+
 
 > eval的用处
 
@@ -101,7 +111,7 @@ const obj = {
 
 > 字面量的字符串和String构造函数生成的字符串有什么不同
 
-* 字面量形式的字符串是string型，而构造函数的实例时objct
+* 字面量形式的字符串是string型，而构造函数的实例时object
 * 实例的string，对象具备`PrimitiveValue`属性，他标识的是值
 * 两个一样的字符串，字面量和String构造函数实例不全等
 * 字面量具备属性和方法，是因为js内部进行了包装
@@ -121,10 +131,10 @@ const obj = {
 
 > let、var、const区别
 
-1.三者都表达的是变量申明
-2.var申明，创建上下文阶段会出现变量提升，在申明前使用变量会变量值为undefined
-3.let、const声明会出现暂时性死区，无法在变量申明前使用变量
-4.const变量初始化必须携带值,申明后无法进行引用更改，意思就是普通类型无法改变，应用类型不能改变索引
+* 1.三者都表达的是变量申明
+* 2.var申明，创建上下文阶段会出现变量提升，在申明前使用变量会变量值为undefined
+* 3.let、const声明会出现暂时性死区，无法在变量申明前使用变量
+* 4.const变量初始化必须携带值,申明后无法进行引用更改，意思就是普通类型无法改变，引用类型不能改变指向堆内存的指针，指针指向内存中的内容是无法控制的
 
 
 > 模块化

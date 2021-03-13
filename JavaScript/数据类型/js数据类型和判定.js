@@ -33,6 +33,14 @@
     null==true  返回的还是false
  */
 
+ 
+eval("x=10;y=20;document.write(x*y)") //200
+
+let s = 'changh'
+console.log(Object.prototype.toString.call(s),typeof s) // [object string] string
+let s2 = new String("A String object")
+console.log(Object.prototype.toString.call(s2),typeof s2) //[object string] object
+
 var str = Symbol();
 console.log(Object.prototype.toString.call(str));
 
