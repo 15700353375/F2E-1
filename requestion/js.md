@@ -10,7 +10,9 @@
     * eval的用处
     * 伪数组与真实数组
     * 字面量的字符串和构造对象差异
+    * 创建一个对象的方式
     * 正则
+    * get和post的区别
     * [es6语法特点](#es6语法)
         * 变量声明的区别
         * 模块化
@@ -43,6 +45,8 @@
     * string、number、boolean、null、undefined、symbol
 * 复杂数据类型
     * object、array、function、date、regexp
+* es10新增的一种数据类型
+    * bigInt 任意精度整数
 
 > 类型判断（typeof）
 string、number、boolean、undefined、symbol、object、function
@@ -54,6 +58,11 @@ string、number、boolean、undefined、symbol、object、function
 
 * Object.prototype.toString.call(val)
 * [object Type]
+> 判断一个变量是对象还是数组
+* Array.isArray(arr)
+* instanceof 判断构造函数的prototype属性是否出现在某个实例对象的原型链上  arr instanceof Array
+* Object.prototype.toString.call(arr)
+* arr.constructor == Array?
 
 >null和undefined的区别
 * null: 表示一个对象被定义了，值为空值。
@@ -109,6 +118,7 @@ const obj = {
 };
 ```
 
+
 > 字面量的字符串和String构造函数生成的字符串有什么不同
 
 * 字面量形式的字符串是string型，而构造函数的实例时object
@@ -116,7 +126,17 @@ const obj = {
 * 两个一样的字符串，字面量和String构造函数实例不全等
 * 字面量具备属性和方法，是因为js内部进行了包装
 * 字面量添加属性和方法不生效，String的实例会生效
+* 
+> 创建一个对象的方式
+* 对象字面量
 
+  ` let obj = {}  `     
+* 构造函数的方式
+  
+  ` let obj = new Object() `
+* 通过Object.create()的方式
+  
+  ` let obj = Object.create(Object.prototype) `
 > 正则
 
 * 常用方法：
@@ -124,6 +144,15 @@ const obj = {
     * test，匹配成功返回boolean
 
 ...待补充
+> get和post的区别
+* get和post在HTTP中都代表着请求数据，其中get请求相对来说更简单、快速，效率高些
+* get相对post安全性低 
+* get有缓存，post没有 get会被浏览器主动catch，post不会，需要手动设置
+* get体积小，post可以无限大
+* get的url参数可见，post不可见
+* get只接受ASCII字符的参数数据类型，post没有限制
+* get请求参数会保留历史记录，post中参数不会保留
+* get在浏览器回退时无害，post会再次提交请求
 
 #### es6语法
 
@@ -190,8 +219,8 @@ const obj = {
 
 > 箭头函数的特点
 
-* 箭头函数内的this，取决于外层作用域
-* 箭头函数没有arguments
+* 箭头函数内的this，取决于外层作用域 (就是定义时所在的对象，而不是使用时所在的对象)
+* 箭头函数没有arguments 如果要用，可以用Rest参数代替
 * 箭头函数不能使用new
 * 箭头函数都是匿名函数
 
@@ -218,6 +247,8 @@ const obj = {
 * 执行上下文分为两个阶段：创建阶段、激活/执行阶段
 * 执行上下文在创建阶段会初始化：变量对象、作用域链、this指向
 * 执行上下文以栈的形式存储，按照先进后出的原则，所以在全局代码尚未执行完成，底部始终有一个全局执行上下文
+  
+https://segmentfault.com/a/1190000018513150
 
 > this的指向
 
